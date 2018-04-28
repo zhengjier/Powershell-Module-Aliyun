@@ -1,0 +1,13 @@
+{
+    "PublicParameter": {
+        "Format": "JSON",
+        "AccessKeyId": "",
+        "Version": "2015-01-09",
+        "SignatureMethod": "HMAC-SHA1",
+        "SignatureVersion": "1.0"
+    },
+    "OtherParameter": {
+        "APIAccessPoint": "https://alidns.aliyuncs.com/",
+        "AccessKeySecret": ""
+    }
+}
