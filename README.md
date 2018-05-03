@@ -23,7 +23,7 @@ Including query, create, edit and remove any dns records on Aliyun DNS.
 | PS Version | Compatibility |
 | :---: | :---: |
 | 5.1 | :heavy_check_mark: |
-| 5.0 |  |
+| 5.0 | :heavy_check_mark: |
 | 4.0 | :heavy_check_mark: |
 | 3.0 |  |
 | 2.0 |  |
@@ -137,7 +137,7 @@ For more information, please use `help <Command>`
 | Powershell版本 | 兼容性 |
 | :---: | :---: |
 | 5.1 | :heavy_check_mark: |
-| 5.0 |  |
+| 5.0 | :heavy_check_mark: |
 | 4.0 | :heavy_check_mark: |
 | 3.0 |  |
 | 2.0 |  |
