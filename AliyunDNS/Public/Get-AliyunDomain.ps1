@@ -59,7 +59,7 @@ function Get-AliyunDomain(){
     $requestURL = New-CanonicalizedRequestString $parameters
 
     try{
-        $response = Invoke-WebRequest $requestURL
+        $response = Invoke-WebRequest $requestURL -UseBasicParsing
         switch ($PSCmdlet.ParameterSetName) {
             "DomainInfo" { 
                 $content = $response.Content | ConvertFrom-Json

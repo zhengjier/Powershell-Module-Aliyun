@@ -28,7 +28,7 @@ function Get-AliyunDNSLogs(){
     $requestURL = New-CanonicalizedRequestString $parameters
 
     try{
-        $response = Invoke-WebRequest $requestURL
+        $response = Invoke-WebRequest $requestURL -UseBasicParsing
         $content = $response.Content | ConvertFrom-Json
         return $content
     }

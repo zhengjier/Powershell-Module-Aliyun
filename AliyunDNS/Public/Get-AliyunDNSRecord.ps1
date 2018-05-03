@@ -48,7 +48,7 @@ function Get-AliyunDNSRecord() {
     $requestURL = New-CanonicalizedRequestString $parameters
 
     try{
-        $response = Invoke-WebRequest $requestURL
+        $response = Invoke-WebRequest $requestURL -UseBasicParsing
         if($PSBoundParameters.ContainsKey('Domain')){
             $content = ($response.Content | ConvertFrom-Json).DomainRecords.Record
         }
