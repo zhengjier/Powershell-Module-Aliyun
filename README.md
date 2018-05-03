@@ -24,7 +24,7 @@ Including query, create, edit and remove any dns records on Aliyun DNS.
 | :---: | :---: |
 | 5.1 | :heavy_check_mark: |
 | 5.0 |  |
-| 4.0 |  |
+| 4.0 | :heavy_check_mark: |
 | 3.0 |  |
 | 2.0 |  |
 ## Installation
@@ -138,7 +138,7 @@ For more information, please use `help <Command>`
 | :---: | :---: |
 | 5.1 | :heavy_check_mark: |
 | 5.0 |  |
-| 4.0 |  |
+| 4.0 | :heavy_check_mark: |
 | 3.0 |  |
 | 2.0 |  |
 ## 安装
