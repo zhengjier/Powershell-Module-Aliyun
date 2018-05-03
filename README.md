@@ -26,7 +26,7 @@ Including query, create, edit and remove any dns records on Aliyun DNS.
 | 5.0 | :heavy_check_mark: |
 | 4.0 | :heavy_check_mark: |
 | 3.0 |  |
-| 2.0 |  |
+| 2.0 | :x: |
 ## Installation
 To use this module
 1. Copy the "AliyunDNS" folder to your PS module path.\
@@ -140,7 +140,7 @@ For more information, please use `help <Command>`
 | 5.0 | :heavy_check_mark: |
 | 4.0 | :heavy_check_mark: |
 | 3.0 |  |
-| 2.0 |  |
+| 2.0 | :x: |
 ## 安装
 按照下面的步骤进行安装
 1. 拷贝AliyunDNS文件夹至powershell模块的默认路径。\
