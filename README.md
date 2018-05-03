@@ -5,13 +5,16 @@
 - [Compatibility](#compatibility)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [DNS Records Management](#domain-records-management)
+  - [DNS Records Management](#dns-records-management)
     - [Get DNS Records](#get-dns-records)
     - [Create New DNS Record](#create-new-dns-record)
-    - [Update Dns Record Information](#update-dns-record-information)
+    - [Update DNS Record Information](#update-dns-record-information)
     - [Set DNS Status](#set-dns-status)
     - [Remove DNS Record](#remove-dns-record)
   - [Domain Management](#domain-management)
+    - [Get Domain Information](#get-domain-information)
+    - [Get Domain Logs](#get-domain-logs)
+    - [Get Main Domain](#get-main-domain)
 - [More Information](#more-information)
 ## Introduction
 This Powershell module allows you to do some basic DNS operations on Aliyun DNS.\
@@ -64,7 +67,7 @@ New-AliyunDNSRecord
     -Priority <Priority>
     -Line <Line>
 ```
-#### Update Dns Record Information
+#### Update DNS Record Information
 ```powershell
 Update-AliyunDNSRecord
     [Mandatory]-RecordId <RecordId>
@@ -118,11 +121,11 @@ For more information, please use `help <Command>`
 - [安装](#安装)
 - [使用方法](#使用方法)
   - [域名解析管理](#域名解析管理)
-    - [获取DNS记录](#获取DNS记录)
-    - [新建DNS域名记录](#新建DNS域名记录)
-    - [更新NDS记录内容信息](#更新NDS记录内容信息)
-    - [设置DNS记录状态](#设置DNS记录状态)
-    - [删除DNS记录](#删除DNS记录)
+    - [获取DNS记录](#获取dns记录)
+    - [新建DNS域名记录](#新建dns域名记录)
+    - [更新NDS记录内容信息](#更新dns记录内容信息)
+    - [设置DNS记录状态](#设置dns记录状态)
+    - [删除DNS记录](#删除dns记录)
   - [域名管理](#域名管理)
     - [获取域名信息](#获取域名信息)
     - [获取域名日志](#获取域名日志)
