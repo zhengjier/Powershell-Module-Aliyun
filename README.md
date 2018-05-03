@@ -1,5 +1,18 @@
 # PowershellModule-AliyunDNS
-[English](#introduction) [中文](#简介)
+[English](#table-of-content) [中文](#简介)
+## Table of Content
+- [Introduction](#introduction)
+- [Compatibility](#compatibility)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [DNS Records Management](#domain-records-management)
+    - [Get DNS Records](#get-dns-records)
+    - [Create New DNS Record](#create-new-dns-record)
+    - [Update Dns Record Information](#update-dns-record-information)
+    - [Set DNS Status](#set-dns-status)
+    - [Remove DNS Record](#remove-dns-record)
+  - [Domain Management](#domain-management)
+- [More Information](#more-information)
 ## Introduction
 This Powershell module allows you to do some basic DNS operations on Aliyun DNS.\
 Including query, create, edit and remove any dns records on Aliyun DNS.
@@ -11,7 +24,7 @@ Including query, create, edit and remove any dns records on Aliyun DNS.
 | 4.0 |  |
 | 3.0 |  |
 | 2.0 |  |
-## Install
+## Installation
 To use this module
 1. Copy the "AliyunDNS" folder to your PS module path.\
     Normally is `%USERPROFILE%\Documents\WindowsPowershell\Modules\`
@@ -23,13 +36,13 @@ Add the `AccessKeyId` and `AccessKeySecret` value to the file.\
 ```powershell
 Set-ExecutionPolicy Unrestricted
 ```
-5. Execute the folloing powershell command to start using the module and then have fun!:smile:\
-*Note: You could use this module without runing as administrator.*
+## Usage
+Execute the folloing powershell command to start using the module and then have fun!:smile:
 ```powershell
 Import-Module AliyunDNS
 ```
-## Usage
-### Get dns records
+### DNS Records Management
+#### Get DNS Records
 ```powershell
 Get-AliyunDNSRecord
     [Mandatory]-Doamin <DomainName>
@@ -40,7 +53,7 @@ Get-AliyunDNSRecord
     -Type <RecordType>
 ```
 *Note: You can only pass one of the mandatory parameters above.*
-### Create new dns record
+#### Create New DNS Record
 ```powershell
 New-AliyunDNSRecord
     [Mandatory]-DomainName <DomainName>
@@ -51,7 +64,7 @@ New-AliyunDNSRecord
     -Priority <Priority>
     -Line <Line>
 ```
-### Update dns record information
+#### Update Dns Record Information
 ```powershell
 Update-AliyunDNSRecord
     [Mandatory]-RecordId <RecordId>
@@ -62,19 +75,59 @@ Update-AliyunDNSRecord
     -Priority <Priority>
     -Line <Line>
 ```
-### Set dns status
+#### Set DNS Status
 ```powershell
 Set-AliyunDNSRecordStatus
     [Mandatory]-RecordId <RecordId>
     [Mandatory]-Status <Status>
 ```
-### Remove dns record
+#### Remove DNS Record
 ```powershell
 Remove-AliyunDNSRecord
     [Mandatory]-RecordId <RecordId>
 ```
+### Domain Management
+#### Get Domain Information
+```powershell
+Get-AliyunDomain
+    -DomainName <DomainName>
+    -WhoIs <$True|$False>
+Get-AliyunDomain
+    -PageNumber <PageNumber>
+    -PageSize <PageSize>
+```
+#### Get Domain Logs
+```powershell
+Get-AliyunDomainLogs
+    -PageNumber <PageNumber>
+    -PageSize <PageSize>
+    -KeyWord <Keyword>
+```
+#### Get Main Domain
+```powershell
+Get-MainDomain
+    -InputString <HostName>
+```
+## More Information
+For more information, please use `help <Command>`
 
 # 阿里云DNS Powershell模块
+## 目录
+- [简介](#简介)
+- [兼容性](#兼容性)
+- [安装](#安装)
+- [使用方法](#使用方法)
+  - [域名解析管理](#域名解析管理)
+    - [获取DNS记录](#获取DNS记录)
+    - [新建DNS域名记录](#新建DNS域名记录)
+    - [更新NDS记录内容信息](#更新NDS记录内容信息)
+    - [设置DNS记录状态](#设置DNS记录状态)
+    - [删除DNS记录](#删除DNS记录)
+  - [域名管理](#域名管理)
+    - [获取域名信息](#获取域名信息)
+    - [获取域名日志](#获取域名日志)
+    - [获取主域名](#获取主域名)
+- [更多帮助](#更多帮助)
 ## 简介
 阿里云DNS powershell模块用于进行基本的云解析操作，例如查询，新建，编辑，删除记录等
 ## 兼容性
@@ -97,13 +150,13 @@ Remove-AliyunDNSRecord
 ```powershell
 Set-ExecutionPolicy Unrestricted
 ```
-5. 执行以下指令以导入此模块，然后就可以愉快的使用了!:smile:\
-*注意: 你可以不需要以管理员身份运行Powershell来使用此模块*
+## 使用方法
+执行以下指令以导入此模块，然后就可以愉快的使用了!:smile:
 ```powershell
 Import-Module AliyunDNS
 ```
-## 使用方法
-### 获取DNS记录
+### 域名解析管理
+#### 获取DNS记录
 ```powershell
 Get-AliyunDNSRecord
     [Mandatory]-Doamin <DomainName>
@@ -114,7 +167,7 @@ Get-AliyunDNSRecord
     -Type <RecordType>
 ```
 *注意: 在这个命令中你只允许传入一个强制参数。*
-### 新建DNS域名记录
+#### 新建DNS域名记录
 ```powershell
 New-AliyunDNSRecord
     [Mandatory]-DomainName <DomainName>
@@ -125,7 +178,7 @@ New-AliyunDNSRecord
     -Priority <Priority>
     -Line <Line>
 ```
-### 更新NDS记录内容信息
+#### 更新NDS记录内容信息
 ```powershell
 Update-AliyunDNSRecord
     [Mandatory]-RecordId <RecordId>
@@ -136,14 +189,38 @@ Update-AliyunDNSRecord
     -Priority <Priority>
     -Line <Line>
 ```
-### 设置DNS记录状态
+#### 设置DNS记录状态
 ```powershell
 Set-AliyunDNSRecordStatus
     [Mandatory]-RecordId <RecordId>
     [Mandatory]-Status <Status>
 ```
-### 删除DNS记录
+#### 删除DNS记录
 ```powershell
 Remove-AliyunDNSRecord
     [Mandatory]-RecordId <RecordId>
 ```
+### 域名管理
+#### 获取域名信息
+```powershell
+Get-AliyunDomain
+    -DomainName <DomainName>
+    -WhoIs <$True|$False>
+Get-AliyunDomain
+    -PageNumber <PageNumber>
+    -PageSize <PageSize>
+```
+#### 获取域名日志
+```powershell
+Get-AliyunDomainLogs
+    -PageNumber <PageNumber>
+    -PageSize <PageSize>
+    -KeyWord <Keyword>
+```
+#### 获取主域名
+```powershell
+Get-MainDomain
+    -InputString <HostName>
+```
+## 更多帮助
+更多帮助信息请使用`help <Command>`查询
