@@ -1,12 +1,19 @@
 # Get dns records with specified domain name
 function Get-AliyunDNSRecord() {
     param(
-        [Parameter(Mandatory=$true, ParameterSetName='byDomain')]$Domain,
-        [Parameter(Mandatory=$true, ParameterSetName='byRecordId')]$RecordId,
-        [Parameter(Mandatory=$true, ParameterSetName='bySubDomain')]$SubDomain,
-        $PageNumber,
-        $PageSize,
+        [Parameter(Mandatory=$true, ParameterSetName='byDomain')]
+        [string]
+        $Domain,
+        [Parameter(Mandatory=$true, ParameterSetName='byRecordId')]
+        [string]
+        $RecordId,
+        [Parameter(Mandatory=$true, ParameterSetName='bySubDomain')]
+        [string]
+        $SubDomain,
+        [long]$PageNumber,
+        [long]$PageSize,
         [ValidateSet("A","NS","MX","TXT","CNAME","SRV","AAAA","CAA","REDIRECT_URL","FORWARD_URL")]
+        [string]
         $Type
     )
 

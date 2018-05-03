@@ -1,15 +1,22 @@
 # New dns record
 function New-AliyunDNSRecord() {
     param(
-        [Parameter(Mandatory=$true)]$DomainName,
-        [Parameter(Mandatory=$true)]$RR,
+        [Parameter(Mandatory=$true)]
+        [string]
+        $DomainName,
+        [Parameter(Mandatory=$true)]
+        [string]
+        $RR,
         [Parameter(Mandatory=$true)]
         [ValidateSet("A","NS","MX","TXT","CNAME","SRV","AAAA","CAA","REDIRECT_URL","FORWARD_URL")]
+        [string]
         $Type,
-        [Parameter(Mandatory=$true)]$Value,
-        $TTL,
-        $Priority,
-        $Line
+        [Parameter(Mandatory=$true)]
+        [string]
+        $Value,
+        [long]$TTL,
+        [long]$Priority,
+        [string]$Line
     )
     
     # Generate the public parameter with specific action parameter

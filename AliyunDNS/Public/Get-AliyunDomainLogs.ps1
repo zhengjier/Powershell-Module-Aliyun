@@ -1,19 +1,15 @@
-# Get dns operation logs
-function Get-AliyunDNSLogs(){
+# Get domain operation logs
+function Get-AliyunDomainLogs(){
     param(
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
-        [string]
-        $DomainName,
-        [long]$PageNumber,
-        [long]$PageSize,
+        [int]$PageNumber,
+        [int]$PageSize,
         [string]$KeyWord
     )
 
     # Generate the public parameter with specific action parameter
     $parameters = New-PublicParameter
-    $parameters | Add-Member -NotePropertyName 'Action' -NotePropertyValue 'DescribeRecordLogs'
-    $parameters | Add-Member -NotePropertyName 'DomainName' -NotePropertyValue $DomainName
-
+    $parameters | Add-Member -NotePropertyName 'Action' -NotePropertyValue 'DescribeDomainLogs'
+    
     # Check optional parameter
     if($PSBoundParameters.ContainsKey('PageNumber')) {
         $parameters | Add-Member -NotePropertyName 'PageNumber' -NotePropertyValue $PageNumber
