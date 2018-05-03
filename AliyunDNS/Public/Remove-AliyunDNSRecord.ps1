@@ -1,7 +1,7 @@
 # Remove a existing dns record
 function Remove-AliyunDNSRecord() {
     param(
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]$RecordId
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]$RecordId
     )
 
     # Generate the public parameter with specific action parameter

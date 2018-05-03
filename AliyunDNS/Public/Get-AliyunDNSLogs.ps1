@@ -1,7 +1,7 @@
 # Get dns operation logs
 function Get-AliyunDNSLogs(){
     param(
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
         [string]
         $DomainName,
         [long]$PageNumber,

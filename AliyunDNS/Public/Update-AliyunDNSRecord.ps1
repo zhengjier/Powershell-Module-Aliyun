@@ -1,17 +1,17 @@
 # Update existing dns record
 function Update-AliyunDNSRecord() {
     param(
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
         [string]
         $RecordId,
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
         [string]
         $RR,
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
         [ValidateSet("A","NS","MX","TXT","CNAME","SRV","AAAA","CAA","REDIRECT_URL","FORWARD_URL")]
         [string]
         $Type,
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
         [string]
         $Value,
         [long]$TTL,

@@ -1,7 +1,7 @@
 # Update the dns record status
 function Set-AliyunDNSRecordStatus() {
     param(
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName)]$RecordId,
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]$RecordId,
         [Parameter(Mandatory=$true)][ValidateSet("Enable","Disable")]$Status
     )
 
