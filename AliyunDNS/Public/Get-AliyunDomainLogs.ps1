@@ -21,7 +21,7 @@ function Get-AliyunDomainLogs(){
         $parameters | Add-Member -NotePropertyName 'KeyWord' -NotePropertyValue $KeyWord
     }
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

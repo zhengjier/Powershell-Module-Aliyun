@@ -19,7 +19,7 @@ function Get-AliyunDNSRecord() {
 
     # Generate the public parameter with specific action parameter
     # Check parameter set
-    $parameters = New-PublicParameter
+    $parameters = New-PublicParameter -Service "DNS"
     if($PSBoundParameters.ContainsKey('Domain')){
         $parameters | Add-Member -NotePropertyName 'Action' -NotePropertyValue 'DescribeDomainRecords'
         $parameters | Add-Member -NotePropertyName 'DomainName' -NotePropertyValue $Domain
@@ -45,7 +45,7 @@ function Get-AliyunDNSRecord() {
     }
 
     # Generate the request url
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

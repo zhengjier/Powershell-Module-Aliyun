@@ -37,7 +37,7 @@ function New-AliyunDNSRecord() {
         $parameters | Add-Member -NotePropertyName 'Line' -NotePropertyValue $Line
     }
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

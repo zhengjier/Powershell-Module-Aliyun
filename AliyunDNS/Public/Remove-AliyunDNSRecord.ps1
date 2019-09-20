@@ -9,7 +9,7 @@ function Remove-AliyunDNSRecord() {
     $parameters | Add-Member -NotePropertyName 'Action' -NotePropertyValue 'DeleteDomainRecord'
     $parameters | Add-Member -NotePropertyName 'RecordId' -NotePropertyValue $RecordId
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

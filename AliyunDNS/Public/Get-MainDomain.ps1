@@ -11,7 +11,7 @@ function Get-MainDomain(){
     $parameters | Add-Member -NotePropertyName 'Action' -NotePropertyValue 'GetMainDomainName'
     $parameters | Add-Member -NotePropertyName 'InputString' -NotePropertyValue $InputString
     
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

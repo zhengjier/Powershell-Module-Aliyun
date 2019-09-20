@@ -56,7 +56,7 @@ function Get-AliyunDomain(){
         $parameters | Add-Member -NotePropertyName 'GroupId' -NotePropertyValue $GroupId
     }
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

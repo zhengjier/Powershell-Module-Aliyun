@@ -5,8 +5,7 @@ function New-HMACEncoding() {
         $Type = 'HMACSHA1'
     )
     # Get Access Key Secret
-    $apiConfig = Get-Configuration
-    $secret = $apiConfig.OtherParameter.AccessKeySecret
+    $secret = (Get-Configuration).Universal.AccessKeySecret
 
     # HMAC Encoding
     $hmacsha = New-Object System.Security.Cryptography.$Type

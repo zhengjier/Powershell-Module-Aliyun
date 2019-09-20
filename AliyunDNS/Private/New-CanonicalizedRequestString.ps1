@@ -1,7 +1,8 @@
 # Canonicalize Request String
 function New-CanonicalizedRequestString() {
     param(
-        $Parameters
+        $Parameters,
+        $Service
     )
 
     # Create the string to sign by the Access Key Secret
@@ -19,7 +20,21 @@ function New-CanonicalizedRequestString() {
     $requestParamString = Join-Parameters $Parameters
 
     # Get the finalized request url
-    $apiAccessPoint = (Get-Configuration).OtherParameter.APIAccessPoint
+    switch ($Service) {
+        "DNS" {
+            $apiAccessPoint = (Get-Configuration).DNS.OtherParameter.APIAccessPoint
+        }
+        "VPC" {
+            $apiAccessPoint = (Get-Configuration).VPC.OtherParameter.APIAccessPoint
+        }
+        "ECS" {
+            $apiAccessPoint = (Get-Configuration).ECS.OtherParameter.APIAccessPoint
+        }
+        Default {
+            $apiAccessPoint = (Get-Configuration).DNS.OtherParameter.APIAccessPoint
+        }
+    }
+    
     $canonicalizedString = $apiAccessPoint + '?' + $requestParamString
     
     return $canonicalizedString

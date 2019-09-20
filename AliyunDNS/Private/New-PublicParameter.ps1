@@ -1,7 +1,21 @@
 # Set Pulic Parameter
-function New-PublicParameter() {
+function New-PublicParameter {
+    Param (
+        $Service
+    )
     # Get configuration from file
-    $apiConfig = (Get-Configuration).PublicParameter
+    switch ($Service) {
+        "DNS" {
+            $apiConfig = (Get-Configuration).DNS.PublicParameter
+        }
+        "VPC" {
+            $apiConfig = (Get-Configuration).VPC.PublicParameter
+        }
+        "ECS" {
+            $apiConfig = (Get-Configuration).ECS.PublicParameter
+        }
+        Default {$apiConfig = (Get-Configuration).DNS.PublicParameter}
+    }
 
     $timestamp = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
     $apiConfig | Add-Member -NotePropertyName 'Timestamp' -NotePropertyValue $timestamp # Add current timestamp to configuration

@@ -11,7 +11,7 @@ function Set-AliyunDNSRecordStatus() {
     $parameters | Add-Member -NotePropertyName 'RecordId' -NotePropertyValue $RecordId
     $parameters | Add-Member -NotePropertyName 'Status' -NotePropertyValue $Status
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing

@@ -1,5 +1,8 @@
 # Get Configuration from File
 function Get-Configuration() {
+    Param(
+        $Service
+    )
     # Get base location
     $baseLoc = (Get-Module AliyunDNS).ModuleBase
     $configPath = $baseLoc + '\config.json'

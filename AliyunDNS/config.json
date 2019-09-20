@@ -1,13 +1,41 @@
 {
-    "PublicParameter": {
-        "Format": "JSON",
-        "AccessKeyId": "",
-        "Version": "2015-01-09",
-        "SignatureMethod": "HMAC-SHA1",
-        "SignatureVersion": "1.0"
-    },
-    "OtherParameter": {
-        "APIAccessPoint": "https://alidns.aliyuncs.com/",
+    "Universal": {
         "AccessKeySecret": ""
+    },
+    "DNS": {
+        "PublicParameter": {
+            "Format": "JSON",
+            "AccessKeyId": "",
+            "Version": "2015-01-09",
+            "SignatureMethod": "HMAC-SHA1",
+            "SignatureVersion": "1.0"
+        },
+        "OtherParameter": {
+            "APIAccessPoint": "https://alidns.aliyuncs.com/"
+        }
+    },
+    "VPC": {
+        "PublicParameter": {
+            "Format": "JSON",
+            "AccessKeyId": "",
+            "Version": "2016-04-28",
+            "SignatureMethod": "HMAC-SHA1",
+            "SignatureVersion": "1.0"
+        },
+        "OtherParameter": {
+            "APIAccessPoint": "https://vpc.aliyuncs.com/"
+        }
+    },
+    "ECS": {
+        "PublicParameter": {
+            "Format": "JSON",
+            "AccessKeyId": "",
+            "Version": "2014-05-26",
+            "SignatureMethod": "HMAC-SHA1",
+            "SignatureVersion": "1.0"
+        },
+        "OtherParameter": {
+            "APIAccessPoint": "https://ecs.aliyuncs.com/"
+        }
     }
 }

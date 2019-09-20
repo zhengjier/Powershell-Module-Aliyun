@@ -25,7 +25,7 @@ function Get-AliyunDNSLogs(){
         $parameters | Add-Member -NotePropertyName 'KeyWord' -NotePropertyValue $KeyWord
     }
 
-    $requestURL = New-CanonicalizedRequestString $parameters
+    $requestURL = New-CanonicalizedRequestString -Parameters $parameters -Service "DNS"
 
     try{
         $response = Invoke-WebRequest $requestURL -UseBasicParsing
