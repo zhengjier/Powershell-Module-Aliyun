@@ -4,7 +4,7 @@ function Get-Configuration() {
         $Service
     )
     # Get base location
-    $baseLoc = (Get-Module AliyunDNS).ModuleBase
+    $baseLoc = (Get-Module Aliyun.Admin).ModuleBase
     $configPath = $baseLoc + '\config.json'
 
     # Read configuration and convert to PS object

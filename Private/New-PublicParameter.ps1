@@ -14,6 +14,9 @@ function New-PublicParameter {
         "ECS" {
             $apiConfig = (Get-Configuration).ECS.PublicParameter
         }
+        "RAM" {
+            $apiConfig = (Get-Configuration).RAM.PublicParameter
+        }
         Default {$apiConfig = (Get-Configuration).DNS.PublicParameter}
     }
 

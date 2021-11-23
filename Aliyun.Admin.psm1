@@ -17,4 +17,4 @@ $Private = @( Get-ChildItem -Path "$PSScriptRoot\Private\*.ps1" )
 ######  Here is to select which function to be exported   ######
 ################################################################
 
-Export-ModuleMember -Function $Public.BaseName
+# Export-ModuleMember -Function $Public.BaseName

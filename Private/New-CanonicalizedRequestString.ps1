@@ -6,8 +6,11 @@ function New-CanonicalizedRequestString() {
     )
 
     # Create the string to sign by the Access Key Secret
+    # Write-Host (Join-Parameters $Parameters)
     $stringToSign = 'GET&%2F&' + ([System.Uri]::EscapeDataString((Join-Parameters $Parameters)))
+    # Write-Host $stringToSign
     $stringToSign = Update-String $stringToSign
+    # Write-Host $stringToSign
 
     # Sign the request string using HMAC SHA1 method
     $signature = New-HMACEncoding $stringToSign
@@ -29,6 +32,9 @@ function New-CanonicalizedRequestString() {
         }
         "ECS" {
             $apiAccessPoint = (Get-Configuration).ECS.OtherParameter.APIAccessPoint
+        }
+        "RAM" {
+            $apiAccessPoint = (Get-Configuration).RAM.OtherParameter.APIAccessPoint
         }
         Default {
             $apiAccessPoint = (Get-Configuration).DNS.OtherParameter.APIAccessPoint

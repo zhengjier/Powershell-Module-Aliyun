@@ -37,5 +37,17 @@
         "OtherParameter": {
             "APIAccessPoint": "https://ecs.aliyuncs.com/"
         }
+    },
+    "RAM": {
+        "PublicParameter": {
+            "Format": "JSON",
+            "AccessKeyId": "",
+            "Version": "2015-05-01",
+            "SignatureMethod": "HMAC-SHA1",
+            "SignatureVersion": "1.0"
+        },
+        "OtherParameter": {
+            "APIAccessPoint": "https://ram.aliyuncs.com/"
+        }
     }
 }
